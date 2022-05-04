@@ -1,14 +1,8 @@
-﻿
-
-
-using System;
-
-  namespace AddressBooks
-  {
-    class AddrBook
+﻿// See https://aka.ms/new-console-template for more information
+namespace AddressBooks
+{
+    internal class AddrBook
     {
-
-
         public static List<Person> People = new List<Person>();
         public class Person
         {
@@ -37,7 +31,6 @@ using System;
 
             Console.Write("Enter Last Name: ");
             person.LastName = Console.ReadLine();
-
             Console.Write("Enter Address : ");
             person.Addresses = Console.ReadLine();
 
@@ -141,7 +134,7 @@ using System;
 
             }
         }
-        
+        //Removing the detail
         public static void RemovePeople()
         {
             Console.WriteLine("Enter the first name of the person you would like to remove.");
@@ -177,5 +170,8 @@ using System;
         }
 
     }
-  }
+}
 
+
+        
+    
