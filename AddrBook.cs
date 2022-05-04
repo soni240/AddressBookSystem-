@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
 
-namespace AddressBooks
-{
-    internal class AddrBook
+using System;
+
+  namespace AddressBooks
+  {
+    class AddrBook
     {
+
+
         public static List<Person> People = new List<Person>();
         public class Person
         {
@@ -139,6 +141,24 @@ namespace AddressBooks
 
             }
         }
+        
+        public static void RemovePeople()
+        {
+            Console.WriteLine("Enter the first name of the person you would like to remove.");
+            string Remove = Console.ReadLine();
+            foreach (var person in People.ToList())
+            {
+                if (person.FirstName.ToUpper() == Remove.ToUpper())
+                {
+                    People.Remove(person);
+                    Console.WriteLine("Contact is deleted");
+                }
+                else
+                {
+                    Console.WriteLine("Contact is not present");
+                }
+            }
+        }
         public static void ListingPeople()
         {
             if (People.Count == 0)
@@ -157,7 +177,5 @@ namespace AddressBooks
         }
 
     }
-}
+  }
 
-    }
-}
