@@ -1,13 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
 using System;
 
-namespace UC8_Multiple_Person_City_State
+namespace AddressBooks
 {
     class Program
     {
-        public static object AddressBooks { get; private set; }
-
         static void Main(string[] args)
         {
 
@@ -48,3 +45,4 @@ namespace UC8_Multiple_Person_City_State
         }
     }
 }
+
