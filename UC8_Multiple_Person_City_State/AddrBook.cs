@@ -4,17 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC7_Duplicate_Entry
+namespace UC8_Multiple_Person_City_State
 {
-    internal class AddrBook
+    internal class AddrBook :IAddressBookSystem
     {
-        //void GetCustomer();
-
-        void ListingPeople();
-        void RemovePeople();
-    }
-    public class AddrBook : IAddressBookSystem
-    {
+        public static Dictionary<string, List<AddrBook>> City = new Dictionary<string, List<AddrBook>>();
+        public static Dictionary<string, List<AddrBook>> State = new Dictionary<string, List<AddrBook>>();
+        public List<AddrBook> stateList;
+        public List<AddrBook> cityList;
         public List<AddrBook> people;
         public AddrBook()
         {
@@ -65,8 +62,6 @@ namespace UC7_Duplicate_Entry
                 }
             }
         }
-
-
         //Print the details
         public void PrintCustomer(AddrBook person)
         {
@@ -138,22 +133,17 @@ namespace UC7_Duplicate_Entry
 
                             }
 
-
                         }
+
                     }
+                    else
+                    {
+                        Console.WriteLine("Enter the valid name!");
+                    }
+
                 }
-
             }
-            else
-            {
-                Console.WriteLine("Enter the valid name!");
-            }
-
         }
-
-
-
-
         //Listing the user entered details or modified details
         public void ListingPeople()
         {
@@ -169,9 +159,6 @@ namespace UC7_Duplicate_Entry
                 PrintCustomer(person);
             }
             return;
-            //Console.WriteLine("\nPress any key to continue.");
-
-            //Console.ReadKey();
 
         }
         //Removing the field using Lambda Function
@@ -187,8 +174,6 @@ namespace UC7_Duplicate_Entry
                 return;
             }
             Console.WriteLine("Are you sure you want to remove this person from your address book? (Y/N)");
-            //  PrintCustomer(person);
-
             if (Console.ReadKey().Key == ConsoleKey.Y)
             {
                 people.Remove(person);
@@ -196,11 +181,25 @@ namespace UC7_Duplicate_Entry
 
             }
         }
+        public static void StoreCityList(string key, List<AddrBook> cityList, string city)
+        {
+            List<AddrBook> CityList = cityList.FindAll(a => a.city.ToLower() == city);
+            foreach (var i in CityList)
+            {
+                Console.WriteLine("Found person \"{0}\" in Address Book \"{1}\" , residing in City {2}", i.firstName, key, i.city);
+            }
+        }
+        //Display Person names found in given State
+        public static void StoreStateList(string key, List<AddrBook> stateList, string state)
+        {
+            List<AddrBook> StateList = stateList.FindAll(x => x.state.ToLower() == state);
+            foreach (var i in StateList)
+            {
+                Console.WriteLine("Found person \"{0}\" in Address Book \"{1}\" , residing in State {2}", i.firstName, key, i.state);
+            }
+        }
     }
 }
 
-
-
     
-
 

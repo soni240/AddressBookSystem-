@@ -1,7 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
 using System;
 
-namespace UC7_Duplicate_Entry
+namespace UC8_Multiple_Person_City_State
 {
     class Program
     {
@@ -47,4 +48,3 @@ namespace UC7_Duplicate_Entry
         }
     }
 }
-
