@@ -1,10 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-namespace AddressBooks
+namespace UC7_Duplicate_Entry
 {
     class Program
     {
+        public static object AddressBooks { get; private set; }
+
         static void Main(string[] args)
         {
 
