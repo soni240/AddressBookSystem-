@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC10_Number_Count_City_Person
+namespace UC11_Sort
 {
-    internal class AddrBook
+    public interface IAddressBookSystem
+    {
+        void ListingPeople();
+        void RemovePeople();
+    }
+    public class AddrBook:IAddressBookSystem
     {
         public static Dictionary<string, List<AddrBook>> City = new Dictionary<string, List<AddrBook>>();
         public static Dictionary<string, List<AddrBook>> State = new Dictionary<string, List<AddrBook>>();

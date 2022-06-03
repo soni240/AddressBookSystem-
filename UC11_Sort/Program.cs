@@ -1,12 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 using System.Collections.Generic;
+using UC11_Sort;
 
-namespace UC10_Number_Count_City_Person
+namespace AddressBooks
 {
     class Program
     {
-
         public static Dictionary<string, List<AddrBook>> addressBook = new Dictionary<string, List<AddrBook>>();
         public static Dictionary<string, List<AddrBook>> City = new Dictionary<string, List<AddrBook>>();
         public static Dictionary<string, List<AddrBook>> State = new Dictionary<string, List<AddrBook>>();
@@ -54,13 +54,12 @@ namespace UC10_Number_Count_City_Person
                     string EmailId = Console.ReadLine();
                     addrBook.GetCustomer(FirstName, LastName, PhoneNumber, Addresses, City, State, ZipCode, EmailId);
                     noOfContact--;
-                    //addressBook.Add(addressbookname, addrBook.people);
                     Console.WriteLine(" ");
                     addrBook.ListingPeople();
                 }
                 Console.WriteLine("1.To modify the details");
                 Console.WriteLine("2.To remove the details");
-                Console.WriteLine("3.city or state");
+                Console.WriteLine("3.Exit from loop");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -74,29 +73,6 @@ namespace UC10_Number_Count_City_Person
                         Console.WriteLine(" ");
                         addrBook.ListingPeople();
                         break;
-                    case 3:
-                        Console.WriteLine("Enter 1-To Search a person through a City");
-                        Console.WriteLine("Enter 2-To Search a person through a State");
-                        Console.WriteLine("Enter 3-To view a person by state list or city list");
-                        int opt = Convert.ToInt32(Console.ReadLine());
-                        switch (opt)
-                        {
-
-                            case 1:
-                                SearchAddress(opt);
-                                break;
-                            case 2:
-                                SearchAddress(opt);
-                                break;
-                            case 3:
-                                AddrBook.DisplayCityorState();
-
-                                break;
-                            default:
-                                Console.WriteLine("Invalid Option!");
-                                break;
-                        }
-                        break;
                 }
                 if (addressBook.ContainsKey(addressbookname))
                 {
@@ -108,31 +84,58 @@ namespace UC10_Number_Count_City_Person
                     addressBook.Add(addressbookname, addrBook.people);
                 }
                 noOfBooks++;
+
                 foreach (KeyValuePair<string, List<AddrBook>> addr in addressBook)
                 {
                     Console.WriteLine("The address Books are:{0}", addr.Key);
 
                 }
-            }
-            static void SearchAddress(int option)
-            {
-                string city, state;
-                if (option == 1)
-                {
-                    Console.WriteLine("Enter the City Name");
-                    city = Console.ReadLine();
-                    foreach (KeyValuePair<string, List<AddrBook>> kvp in addressBook)
-                    {
-                        AddrBook.StoreCityList(kvp.Key, kvp.Value, city);
 
-                    }
-                    if (option == 2)
+                Console.WriteLine("Enter 1-To Search a person through a City");
+                Console.WriteLine("Enter 2-To Search a person through a State");
+                Console.WriteLine("Enter 3-To view a person by state list or city list");
+                Console.WriteLine("Enter 4-Sort Contact People");
+                int opt = Convert.ToInt32(Console.ReadLine());
+                switch (opt)
+                {
+
+                    case 1:
+                        SearchAddress(opt);
+                        break;
+                    case 2:
+                        SearchAddress(opt);
+                        break;
+                    case 3:
+                        AddrBook.DisplayCityorState();
+                        break;
+                    case 4:
+                      //  AddrBook.SortContactPerson(addressBook);
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Option!");
+                        break;
+                }
+
+                static void SearchAddress(int option)
+                {
+                    string city, state;
+                    if (option == 1)
                     {
                         Console.WriteLine("Enter the City Name");
-                        state = Console.ReadLine();
+                        city = Console.ReadLine();
                         foreach (KeyValuePair<string, List<AddrBook>> kvp in addressBook)
                         {
-                            AddrBook.StoreStateList(kvp.Key, kvp.Value, state);
+                            AddrBook.StoreCityList(kvp.Key, kvp.Value, city);
+
+                        }
+                        if (option == 2)
+                        {
+                            Console.WriteLine("Enter the City Name");
+                            state = Console.ReadLine();
+                            foreach (KeyValuePair<string, List<AddrBook>> kvp in addressBook)
+                            {
+                                AddrBook.StoreStateList(kvp.Key, kvp.Value, state);
+                            }
                         }
                     }
                 }
