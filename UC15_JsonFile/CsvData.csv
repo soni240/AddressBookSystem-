@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UC15_JsonFile
+{
+    class CsvData
+    {
+      FirstName	lastName	Address 	city	state	zip	  phoneNumber	email
+      Ankita      P	      chennai	chennai	 TamilNadu	600072	9089786756	srisha@gmail.com
+
+
+    }
+}

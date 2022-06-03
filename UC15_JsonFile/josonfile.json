@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "noEmitOnError": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "target": "es5"
+    },
+    "exclude": [
+        "node_modules",
+        "wwwroot"
+    ]
+}
+{"person info":[{"ContactArray":[],"contact":0,"stateList":null,"cityList":null,"firstName":"Ankita","lastName":"P","Address":"chennai","city":"chennai","state":"TamilNadu","zip":"600072","phoneNumber":"9089786756","email":"srisha@gmail.com"}]}
