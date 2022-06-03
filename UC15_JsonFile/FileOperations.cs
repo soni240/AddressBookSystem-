@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC14_CSVFile
+namespace UC15_JsonFile
 {
-    public class FileOperations
+    internal class FileOperations
     {
         const string filepath = @"D:\Random Programs\Address_Book\Address_Book\DictFile.txt";
 

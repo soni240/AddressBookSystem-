@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC14_CSVFile
+namespace UC15_JsonFile
 {
-    internal class ContactPersonCompare:IComparer<AddrBook>
+    public class ContactPersonComparer: IComparer<AddrBook>
     {
         //Constants 
         public enum sortBy
@@ -40,6 +40,7 @@ namespace UC14_CSVFile
         }
     }
 }
+
 
     
 
