@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC11_Sort
+namespace UC12__Sort_City_Zip_State
 {
-    public interface IAddressBookSystem
-    {
-        void ListingPeople();
-        void RemovePeople();
-    }
-    public class AddrBook:IAddressBookSystem
+  public class AddrBook
     {
         public static Dictionary<string, List<AddrBook>> City = new Dictionary<string, List<AddrBook>>();
         public static Dictionary<string, List<AddrBook>> State = new Dictionary<string, List<AddrBook>>();
@@ -203,6 +198,22 @@ namespace UC11_Sort
 
                 }
             }
+        }
+        internal static void SortBasedOnZipCode(Dictionary<string, List<AddrBook>> addressBook)
+        {
+            throw new NotImplementedException();
+        }
+        internal static void SortBasedOnState(Dictionary<string, List<AddrBook>> addressBook)
+        {
+            throw new NotImplementedException();
+        }
+        internal static void SortBasedOnCity(Dictionary<string, List<AddrBook>> addressBook)
+        {
+            throw new NotImplementedException();
+        }
+        internal static void SortContactPerson(Dictionary<string, List<AddrBook>> addressBook)
+        {
+            throw new NotImplementedException();
         }
         //Listing the user entered details or modified details
         public void ListingPeople()
