@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-using UC12__Sort_City_Zip_State;
+using System.Collections.Generic;
+using UC13_FileIO;
 
 namespace AddressBooks
 {
@@ -10,6 +11,8 @@ namespace AddressBooks
         public static Dictionary<string, List<AddrBook>> addressBook = new Dictionary<string, List<AddrBook>>();
         public static Dictionary<string, List<AddrBook>> City = new Dictionary<string, List<AddrBook>>();
         public static Dictionary<string, List<AddrBook>> State = new Dictionary<string, List<AddrBook>>();
+        private static object FileOperations;
+
         static void Main(string[] args)
         {
 
@@ -106,6 +109,9 @@ namespace AddressBooks
                 Console.WriteLine("Enter 5-Sort based on city");
                 Console.WriteLine("Enter 6-Sort based on State");
                 Console.WriteLine("Enter 7-Sort based on zipcode");
+                Console.WriteLine("Enter 8-To write a data in file");
+                Console.WriteLine("Enter 9-To read a data in file");
+
                 int opt = Convert.ToInt32(Console.ReadLine());
 
                 switch (opt)
@@ -130,6 +136,12 @@ namespace AddressBooks
                         break;
                     case 7:
                         AddrBook.SortBasedOnZipCode(addressBook);
+                        break;
+                    case 8:
+                         FileOperations.WriteInFile(addressBook);
+                        break;
+                    case 9:
+                        FileOperations.ReadAddressBook();
                         break;
                     default:
                         Console.WriteLine("Invalid Option!");
@@ -164,5 +176,4 @@ namespace AddressBooks
     }
 
 }
-
 
